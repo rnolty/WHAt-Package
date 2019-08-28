@@ -25,10 +25,10 @@ def Get_chosen_plugins():
                 plugins = config_data['plugins']
         except IOError:
             print("Cannot open config file", config_file_path)
-        except:
-            print("Invalid config file", config_file_path, "; delete it or recreate it with",
-                  __file__, "-c")
-    return plugins
+        #except:
+        #    print("Invalid config file", config_file_path, "; delete it or recreate it with",
+        #          __file__, "-c")
+    return plugins.items()
 
 
 # called in config runs to choose and permanently store choices

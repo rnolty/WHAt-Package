@@ -5,9 +5,11 @@
 # whap is used to find out which, if any, of several package managers
 #    has installed a file on your computer
 
-plugins = {'rpm': 'rpmWhap', 'pip': 'pipWhap'}
+plugins = {'rpm': 'rpmWhap', 'pip': 'pipWhap', 'npm': 'npmWhap'}
 
-# todo: add more plugins: dpkg, cpan, pear, docker, flatpak, apm (atom editor)
+# todo: add more plugins: dpkg, cpan, pear, docker, flatpak, apm (atom editor),
+#          cran (R)
+
 #       my python2.7 version of subprocess doesn't support errors argument; not
 #          sure what I have to do to get byte string returned by check_output
 #          into a str.  Short of that I think runs equally well under python2
