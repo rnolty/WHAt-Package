@@ -2,14 +2,16 @@
 Search for the package that installed a file, across many package managers
 
 ```
-$ ./whap.py /usr/bin/python
+$ whap.py /usr/bin/python
 Trying RPM:
     python2-2.7.13-17.fc27.x86_64
 Trying pip:
 ```
 
+The --info command line switch:
+
 ```
-$ ./whap.py -i /usr/bin/python 
+$ whap.py -i /usr/bin/python 
 Trying RPM:
     python2-2.7.13-17.fc27.x86_64
 
@@ -32,8 +34,10 @@ implementation is within the "python2-libs" package.
 Trying pip:
 ```
 
+The --list command line switch (lists all files in the package)
+
 ```
-$ ./whap.py -l /usr/bin/python 
+$ whap.py -l /usr/bin/python 
 Trying RPM:
     python2-2.7.13-17.fc27.x86_64
 
@@ -55,4 +59,24 @@ Trying RPM:
 /usr/share/man/man1/python2.7.1.gz
 
 Trying pip:
+```
+
+To see available plugins, and choose which to use going forward, use the --config command line switch:
+
+```
+whap.py -c
+Choose which package managers to search
+rpm yN :y
+pip yN :n
+npm yN :y
+
+Saving choices rpm,npm
+
+```
+
+```
+whap.py /home/nolty/tmp.svg 
+Trying RPM:
+Trying npm:
+
 ```
