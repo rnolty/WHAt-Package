@@ -31,8 +31,6 @@ BuildArch:      noarch
 
 
 
-%dump
-
 %install
    # source_dir must be passed on command line, as in
    # rpmbuild -bb --define "source_dir `pwd`" whap.spec
@@ -43,7 +41,7 @@ BuildArch:      noarch
    mkdir -p %{buildroot}/usr/lib/%{name}
    cat > %{buildroot}/%{_bindir}/%{name} <<-EOF
 #!/bin/bash
-/usr/bin/python /usr/lib/%{name}/%{name}.pyc
+python3 /usr/lib/%{name}/%{name}.py
 EOF
    chmod 0755 %{buildroot}/%{_bindir}/%{name}
    install -m 0644 *.py* %{buildroot}/usr/lib/%{name}/
