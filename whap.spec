@@ -1,6 +1,6 @@
 Name:           whap
 Version:        0.1
-Release:        1%{?dist}
+Release:        4%{?dist}
 Summary:        Queries several package managers to learn which, if any, installed a given file
 
 License:        GPLv3+
@@ -41,7 +41,7 @@ BuildArch:      noarch
    mkdir -p %{buildroot}/usr/lib/%{name}
    cat > %{buildroot}/%{_bindir}/%{name} <<-EOF
 #!/bin/bash
-python3 /usr/lib/%{name}/%{name}.py
+python3 /usr/lib/%{name}/%{name}.py \$*
 EOF
    chmod 0755 %{buildroot}/%{_bindir}/%{name}
    install -m 0644 *.py* %{buildroot}/usr/lib/%{name}/
